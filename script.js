@@ -1,6 +1,7 @@
-const buttonEl = document.getElementById("roll-button");
+const buttonEl = document.querySelector(".roll-button");
 const diceEl = document.getElementById("dice");
 const rollHistoryEl = document.getElementById("roll-history");
+const diceSoundEl = document.getElementById("dice-sound");
 
 // Array to store the history of dice roll
 let historyList = [];
@@ -16,7 +17,7 @@ function rollDice() {
 
 function updateRollHistory() {
   rollHistoryEl.innerHTML = "";
-  for (let i = 0; i < historyList.length; i++) {
+  for (let i = historyList.length - 1; i >= 0; i--) {
     const listItem = document.createElement("li");
     listItem.innerHTML = `Roll ${i + 1}: <span>${getDiceFace(
       historyList[i]
@@ -48,6 +49,10 @@ function getDiceFace(rollResult) {
 // Function for Dice rolling simple animation (using css)
 buttonEl.addEventListener("click", () => {
   diceEl.classList.add("roll-animation");
+
+  // To play the dice roll sound
+  diceSoundEl.play();
+
   setTimeout(() => {
     diceEl.classList.remove("roll-animation");
     rollDice();

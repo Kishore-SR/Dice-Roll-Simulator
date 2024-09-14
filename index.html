@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Roller - KSR</title>
+    <meta name="author" content="Kishore S R">
+    <meta name="description"
+        content="A fun and interactive dice roller web application. Roll the virtual dice and view your roll history with a smooth animation effect.">
+    <meta name="keywords" content="dice roller, JavaScript, web app, virtual dice, interactive dice, roll history">
 
+    <link rel="shortcut icon" href="assets/dice-favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,7 +21,8 @@
 
     <div class="dice" id="dice">&#9860;</div>
 
-    <!-- <button id="roll-button">Roll Dice</button> -->
+    <!-- Dice Rolling sound -->
+    <audio id="dice-sound" src="assets/dice-rolling-sound.wav"></audio>
 
     <button class="roll-button">
         <svg class="icon" id="Play" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +36,6 @@
     <ul id="roll-history">
         <!-- Dice roll-history gets added here  -->
     </ul>
-    <script src="index.js"></script>
 
     <script src="script.js"></script>
 </body>
